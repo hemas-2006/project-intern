@@ -6,29 +6,22 @@
 }
 
 body{
-    background-color:#f4f7fb;
+    background:#f4f7fb;
 }
 
 /* NAVBAR */
 
 nav{
+    background:green;
+    color:white;
+    padding:15px 30px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 50px;
-    background-color:white;
-    box-shadow:0px 2px 10px rgba(0,0,0,0.1);
 }
 
 #logo{
-    color:green;
-    font-size:30px;
-}
-
-#menu{
-    display:flex;
-    gap:25px;
-    list-style:none;
+    font-size:28px;
 }
 
 #navButtons{
@@ -37,7 +30,7 @@ nav{
 }
 
 #loginButton,
-#signupButton{
+#registerButton{
     padding:10px 18px;
     border:none;
     border-radius:5px;
@@ -45,89 +38,94 @@ nav{
 }
 
 #loginButton{
-    background-color:white;
-    border:1px solid green;
+    background:white;
     color:green;
 }
 
-#signupButton{
-    background-color:green;
+#registerButton{
+    background:black;
     color:white;
 }
 
-/* HERO SECTION */
+/* HERO */
 
-#heroSection{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:70px;
-    background-color:#e8f5e9;
+#hero{
+    text-align:center;
+    padding:60px;
+    background:#e8f5e9;
 }
 
-#heroText{
-    width:50%;
+#hero h1{
+    font-size:42px;
+    margin-bottom:15px;
 }
 
-#heroText h1{
-    font-size:40px;
-    margin-bottom:60px;
-}
-
-#heroText p{
+#hero p{
     font-size:18px;
     margin-bottom:20px;
-    line-height:1.6;
 }
 
-#heroButtons{
-    display:flex;
-    gap:15px;
-}
-
-#startButton,
-#learnButton{
+#hero button{
     padding:12px 20px;
     border:none;
+    background:green;
+    color:white;
     border-radius:5px;
     cursor:pointer;
 }
 
-#startButton{
-    background-color:green;
-    color:white;
-}
+/* BALANCE SECTION */
 
-#learnButton{
-    background-color:white;
-    border:1px solid green;
-    color:green;
-}
-
-#heroSection img{
-    width:300px;
-}
-
-/* FEATURES */
-
-#featureSection{
-    padding:70px;
-}
-
-#featureSection h2{
-    text-align:center;
-    margin-bottom:40px;
-}
-
-#featureContainer{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+#balanceSection{
+    display:flex;
+    justify-content:center;
     gap:20px;
+    padding:40px;
+    flex-wrap:wrap;
+}
+
+.balanceCard{
+    background:white;
+    width:250px;
+    padding:25px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0px 2px 10px rgba(0,0,0,0.1);
+}
+
+.balanceCard h3{
+    color:green;
+    margin-bottom:10px;
+}
+
+.balanceCard p{
+    font-size:24px;
+    font-weight:bold;
+}
+
+/* CATEGORY */
+
+#categorySection{
+    padding:40px;
+}
+
+#categorySection h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+#cards{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
 .card{
-    background-color:white;
-    padding:25px;
+    background:white;
+    width:220px;
+    padding:20px;
+    text-align:center;
     border-radius:10px;
     box-shadow:0px 2px 10px rgba(0,0,0,0.1);
 }
@@ -138,90 +136,142 @@ nav{
 }
 
 .card p{
-    margin-bottom:15px;
+    font-size:20px;
 }
 
-.card button{
-    padding:10px 15px;
-    border:none;
-    background-color:green;
-    color:white;
-    border-radius:5px;
-}
-
-/* ANALYTICS */
-
-#analyticsSection{
-    padding:70px;
-    background-color:#eef2ff;
-}
-
-#analyticsSection h2{
-    text-align:center;
-    margin-bottom:40px;
-}
-
-#analyticsContainer{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-}
-
-.analyticsCard{
-    background-color:white;
-    padding:25px;
-    text-align:center;
-    border-radius:10px;
-}
-
-.analyticsCard p{
-    font-size:25px;
-    color:green;
-    font-weight:bold;
-}
-
-/* TRANSACTION TABLE */
+/* TRANSACTIONS */
 
 #transactionSection{
-    padding:70px;
+    padding:40px;
 }
 
 #transactionSection h2{
     text-align:center;
-    margin-bottom:30px;
+    margin-bottom:20px;
 }
 
 table{
-    width:100%;
+    width:80%;
+    margin:auto;
     border-collapse:collapse;
-    background-color:white;
+    background:white;
 }
 
 th,td{
-    padding:15px;
     border:1px solid #ddd;
+    padding:15px;
     text-align:center;
 }
 
 th{
-    background-color:green;
+    background:green;
     color:white;
 }
 
-/* AI SUGGESTIONS */
+/* GOAL */
+
+#goalSection{
+    padding:40px;
+}
+
+#goalSection h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+#goalBox{
+    width:60%;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0px 2px 10px rgba(0,0,0,0.1);
+}
+
+#goalBox p{
+    margin-bottom:15px;
+}
+
+progress{
+    width:80%;
+    height:20px;
+}
+
+/* LIMIT */
+
+#limitSection{
+    padding:40px;
+}
+
+#limitSection h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+#limitBox{
+    width:60%;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0px 2px 10px rgba(0,0,0,0.1);
+}
+
+#limitBox p{
+    margin-bottom:15px;
+}
+
+#limitBox button{
+    padding:12px 20px;
+    border:none;
+    background:green;
+    color:white;
+    border-radius:5px;
+}
+
+/* REWARDS */
+
+#rewardSection{
+    padding:40px;
+}
+
+#rewardSection h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+#rewardBox{
+    width:60%;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0px 2px 10px rgba(0,0,0,0.1);
+}
+
+#rewardBox p{
+    margin-bottom:15px;
+}
+
+/* SUGGESTIONS */
 
 #suggestionSection{
-    padding:70px;
+    padding:40px;
 }
 
 #suggestionSection h2{
     text-align:center;
-    margin-bottom:30px;
+    margin-bottom:20px;
 }
 
 #suggestionBox{
-    background-color:white;
-    padding:30px;
+    width:60%;
+    margin:auto;
+    background:white;
+    padding:25px;
     border-radius:10px;
     box-shadow:0px 2px 10px rgba(0,0,0,0.1);
 }
@@ -233,8 +283,9 @@ th{
 /* FOOTER */
 
 footer{
-    background-color:black;
+    background:black;
     color:white;
     text-align:center;
-    padding:20px;
+    padding:15px;
+    margin-top:30px;
 }

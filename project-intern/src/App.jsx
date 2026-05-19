@@ -1,26 +1,26 @@
 import "./App.css";
 
 function App() {
+
+  const totalIncome = 50000;
+  const totalExpense = 32000;
+  const balance = totalIncome - totalExpense;
+
+  function showMessage() {
+    alert("Welcome to ExpenseAI");
+  }
+
   return (
+
     <div>
 
       {/* NAVBAR */}
 
       <nav>
 
-        <h1 id="logo">
+        <h2 id="logo">
           ExpenseAI
-        </h1>
-
-        <ul id="menu">
-
-          <li>Home</li>
-          <li>Dashboard</li>
-          <li>Budget</li>
-          <li>Reports</li>
-          <li>Profile</li>
-
-        </ul>
+        </h2>
 
         <div id="navButtons">
 
@@ -28,8 +28,8 @@ function App() {
             Login
           </button>
 
-          <button id="signupButton">
-            Sign Up
+          <button id="registerButton">
+            Register
           </button>
 
         </div>
@@ -38,151 +38,91 @@ function App() {
 
       {/* HERO SECTION */}
 
-      <section id="heroSection">
+      <section id="hero">
 
-        <div id="heroText">
+        <h1>
+          AI Smart Expense Tracker
+        </h1>
 
-          <h1>
-            AI Smart Expense<br/> 
-            & Budget Tracker
-          </h1>
+        <p>
+          Track your expenses and manage your budget easily.
+        </p>
 
-          <p>
-            Track your daily expenses, manage budgets,
-            monitor savings and get smart AI suggestions
-            for better financial planning.
-          </p>
-
-          <div id="heroButtons">
-
-            <button id="startButton">
-              Get Started
-            </button>
-
-            <button id="learnButton">
-              Learn More
-            </button>
-
-          </div>
-
-        </div>
-
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/2489/2489756.png"
-          alt="expense"
-        />
+        <button onClick={showMessage}>
+          Get Started
+        </button>
 
       </section>
 
-      {/* FEATURES SECTION */}
+      {/* BALANCE SECTION */}
 
-      <section id="featureSection">
+      <section id="balanceSection">
 
-        <h2>
-          Smart Features
-        </h2>
+        <div className="balanceCard">
 
-        <div id="featureContainer">
+          <h3>Total Income</h3>
 
-          <div className="card">
+          <p>₹{totalIncome}</p>
 
-            <h3>Expense Tracking</h3>
+        </div>
 
-            <p>
-              Easily track daily expenses and spending.
-            </p>
+        <div className="balanceCard">
 
-            <button>
-              View
-            </button>
+          <h3>Total Expense</h3>
 
-          </div>
+          <p>₹{totalExpense}</p>
 
-          <div className="card">
+        </div>
 
-            <h3>Budget Planning</h3>
+        <div className="balanceCard">
 
-            <p>
-              Set monthly budget limits and save money.
-            </p>
+          <h3>Balance</h3>
 
-            <button>
-              View
-            </button>
-
-          </div>
-
-          <div className="card">
-
-            <h3>AI Suggestions</h3>
-
-            <p>
-              Get smart tips to improve your savings.
-            </p>
-
-            <button>
-              View
-            </button>
-
-          </div>
-
-          <div className="card">
-
-            <h3>Reports</h3>
-
-            <p>
-              Analyze monthly spending with reports.
-            </p>
-
-            <button>
-              View
-            </button>
-
-          </div>
+          <p>₹{balance}</p>
 
         </div>
 
       </section>
 
-      {/* ANALYTICS SECTION */}
+      {/* CATEGORY SECTION */}
 
-      <section id="analyticsSection">
+      <section id="categorySection">
 
         <h2>
-          Monthly Overview
+          Expense Categories
         </h2>
 
-        <div id="analyticsContainer">
+        <div id="cards">
 
-          <div className="analyticsCard">
+          <div className="card">
 
-            <h3>Total Income</h3>
+            <h3>Food</h3>
 
-            <p>₹45,000</p>
-
-          </div>
-
-          <div className="analyticsCard">
-
-            <h3>Total Expenses</h3>
-
-            <p>₹28,000</p>
+            <p>₹5000</p>
 
           </div>
 
-          <div className="analyticsCard">
+          <div className="card">
 
-            <h3>Total Savings</h3>
+            <h3>Travel</h3>
 
-            <p>₹17,000</p>
+            <p>₹8000</p>
 
           </div>
 
-          <div className="analyticsCard">
+          <div className="card">
 
-            <h3>Budget Left</h3>
+            <h3>Shopping</h3>
 
-            <p>₹10,000</p>
+            <p>₹12000</p>
+
+          </div>
+
+          <div className="card">
+
+            <h3>Entertainment</h3>
+
+            <p>₹7000</p>
 
           </div>
 
@@ -200,56 +140,116 @@ function App() {
 
         <table>
 
-          <thead>
+          <tr>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
 
-            <tr>
+          <tr>
+            <td>Food</td>
+            <td>₹500</td>
+            <td>Paid</td>
+          </tr>
 
-              <th>Category</th>
-              <th>Amount</th>
-              <th>Status</th>
+          <tr>
+            <td>Travel</td>
+            <td>₹1200</td>
+            <td>Paid</td>
+          </tr>
 
-            </tr>
-
-          </thead>
-
-          <tbody>
-
-            <tr>
-
-              <td>Food</td>
-              <td>₹1200</td>
-              <td>Completed</td>
-
-            </tr>
-
-            <tr>
-
-              <td>Travel</td>
-              <td>₹2500</td>
-              <td>Completed</td>
-
-            </tr>
-
-            <tr>
-
-              <td>Shopping</td>
-              <td>₹1800</td>
-              <td>Pending</td>
-
-            </tr>
-
-          </tbody>
+          <tr>
+            <td>Shopping</td>
+            <td>₹3000</td>
+            <td>Pending</td>
+          </tr>
 
         </table>
 
       </section>
 
-      {/* AI SUGGESTION */}
+      {/* SAVINGS GOAL */}
+
+      <section id="goalSection">
+
+        <h2>
+          Monthly Savings Goal
+        </h2>
+
+        <div id="goalBox">
+
+          <p>
+            Goal : ₹20,000
+          </p>
+
+          <p>
+            Saved : ₹18,000
+          </p>
+
+          <progress value="18000" max="20000"></progress>
+
+        </div>
+
+      </section>
+
+      {/* DAILY LIMIT */}
+
+      <section id="limitSection">
+
+        <h2>
+          Daily Expense Limit
+        </h2>
+
+        <div id="limitBox">
+
+          <p>
+            Daily Limit : ₹2000
+          </p>
+
+          <p>
+            Today's Expense : ₹1500
+          </p>
+
+          <button>
+            Within Limit
+          </button>
+
+        </div>
+
+      </section>
+
+      {/* GAMIFIED REWARD */}
+
+      <section id="rewardSection">
+
+        <h2>
+          Savings Rewards
+        </h2>
+
+        <div id="rewardBox">
+
+          <p>
+            🎉 You saved ₹18,000 this month.
+          </p>
+
+          <p>
+            🏆 Reward Level : Gold Saver
+          </p>
+
+          <p>
+            ⭐ Points Earned : 450
+          </p>
+
+        </div>
+
+      </section>
+
+      {/* AI SUGGESTIONS */}
 
       <section id="suggestionSection">
 
         <h2>
-          AI Smart Suggestions
+          AI Suggestions
         </h2>
 
         <div id="suggestionBox">
@@ -259,11 +259,11 @@ function App() {
           </p>
 
           <p>
-            ✔ Your savings increased by 15%.
+            ✔ Food expenses are within budget.
           </p>
 
           <p>
-            ✔ You are within your monthly budget.
+            ✔ Great savings progress this month.
           </p>
 
         </div>
@@ -275,12 +275,13 @@ function App() {
       <footer>
 
         <p>
-          © 2026 ExpenseAI | Smart Budget Tracker
+          © 2026 ExpenseAI
         </p>
 
       </footer>
 
     </div>
+
   );
 }
 
