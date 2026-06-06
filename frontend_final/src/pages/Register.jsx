@@ -22,7 +22,7 @@ function Register() {
       const response =
       await axios.post(
 
-        "http://localhost:5000/api/auth/register",
+        "https://project-intern-45n0.onrender.com/api/auth/register",
 
         {
           name,
