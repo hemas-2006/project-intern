@@ -36,9 +36,12 @@ app.use(
 "/api/auth",
 authRoutes
 );
+app.get("/", (req, res) => {
+  res.send("Project Running Successfully");
+});
 
 /* DATABASE */
-console.log("MONGO_URL =", process.env.MONGO_URL);
+
 
 mongoose.connect(process.env.MONGO_URL, {
   serverSelectionTimeoutMS: 10000
