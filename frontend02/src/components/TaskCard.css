@@ -1,0 +1,204 @@
+.task-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1.5px solid var(--border);
+  display: flex;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition), opacity var(--transition);
+  animation: fadeSlideIn 0.35s ease both;
+  position: relative;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.task-card.completed {
+  opacity: 0.65;
+  background: #fafafa;
+}
+
+.card-accent {
+  width: 4px;
+  flex-shrink: 0;
+  border-radius: 0;
+}
+
+.card-body {
+  padding: 18px 20px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Top row */
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.check-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--brand);
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+  margin-top: 2px;
+}
+
+.check-btn.checked {
+  background: var(--success);
+  border-color: var(--success);
+  animation: checkPop 0.3s ease both;
+}
+
+.check-btn:hover:not(.checked) {
+  background: var(--brand-light);
+}
+
+.card-title-wrap { flex: 1; min-width: 0; }
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.task-card.completed .card-title {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.card-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Action buttons */
+.card-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.action-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1.5px solid var(--border);
+  background: white;
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+}
+
+.action-btn.edit:hover {
+  border-color: var(--brand);
+  background: var(--brand-light);
+  color: var(--brand);
+}
+
+.action-btn.delete:hover,
+.action-btn.delete.confirm {
+  border-color: var(--danger);
+  background: var(--danger-light);
+  color: var(--danger);
+  animation: pop 0.25s ease;
+}
+
+/* Meta badges */
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.priority-badge { border: 1px solid currentColor; }
+
+.category-badge {
+  background: var(--brand-light);
+  color: var(--brand);
+}
+
+.assignee-badge {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.deadline-badge {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.deadline-badge.overdue {
+  background: var(--danger-light);
+  color: var(--danger);
+}
+
+.deadline-badge.today {
+  background: var(--warning-light);
+  color: #92400e;
+}
+
+/* Tags */
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  padding: 3px 10px;
+  background: #f1f5f9;
+  color: #475569;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Done stamp */
+.completed-stamp {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: var(--success);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}

@@ -1,0 +1,134 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeSlideIn 0.2s ease both;
+}
+
+.modal-box {
+  background: white;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  animation: fadeSlideIn 0.25s ease both;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 28px 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-header h2 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: var(--text-muted);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+}
+
+.modal-close:hover { background: var(--danger-light); color: var(--danger); }
+
+.modal-body {
+  padding: 20px 28px;
+}
+
+.modal-body .form-group { margin-bottom: 16px; }
+
+.modal-footer {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding: 16px 28px 24px;
+  border-top: 1px solid var(--border);
+}
+
+.btn-cancel {
+  padding: 10px 22px;
+  border: 1.5px solid var(--border);
+  background: white;
+  color: var(--text-muted);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  transition: all var(--transition);
+}
+
+.btn-cancel:hover { border-color: var(--danger); color: var(--danger); }
+
+.btn-save {
+  padding: 10px 28px;
+  border: none;
+  background: var(--brand);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-body);
+  transition: all var(--transition);
+  box-shadow: 0 4px 14px rgba(79,70,229,0.3);
+}
+
+.btn-save:hover { background: var(--brand-dark); transform: translateY(-1px); }
+
+/* Reuse form styles from TaskForm */
+.modal-body .form-group { display: flex; flex-direction: column; gap: 6px; }
+.modal-body .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.modal-body label { font-size: 13px; font-weight: 600; color: var(--text); }
+.modal-body input,
+.modal-body textarea,
+.modal-body select {
+  padding: 10px 13px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: #fafafa;
+  outline: none;
+  resize: vertical;
+  transition: border-color var(--transition);
+}
+.modal-body input:focus,
+.modal-body textarea:focus,
+.modal-body select:focus {
+  border-color: var(--brand);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(79,70,229,0.1);
+}
+.modal-body .has-error input,
+.modal-body .has-error select { border-color: var(--danger); background: var(--danger-light); }
+.modal-body .error-msg { font-size: 12px; color: var(--danger); font-weight: 500; }
+.modal-body .error-msg::before { content: '⚠ '; }
+
+@media (max-width: 500px) {
+  .modal-body .form-row { grid-template-columns: 1fr; }
+  .modal-header, .modal-body, .modal-footer { padding-left: 18px; padding-right: 18px; }
+}
